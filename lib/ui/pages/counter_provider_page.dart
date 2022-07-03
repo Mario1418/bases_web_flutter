@@ -10,7 +10,7 @@ class CounterProviderPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-        create: (_) => CounterProvider(),
+        create: (_) => CounterProvider('5'),
         child: const _CounterProviderPageBody());
   }
 }
@@ -34,9 +34,10 @@ class _CounterProviderPageBody extends StatelessWidget {
           FittedBox(
             fit: BoxFit.contain,
             child: Padding(
-              padding: const  EdgeInsets.symmetric(horizontal: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Text('Contador : ${counterProvider.counter}',
-                  style: const TextStyle(fontSize: 80, fontWeight: FontWeight.bold)),
+                  style: const TextStyle(
+                      fontSize: 80, fontWeight: FontWeight.bold)),
             ),
           ),
           Row(mainAxisAlignment: MainAxisAlignment.center, children: [
